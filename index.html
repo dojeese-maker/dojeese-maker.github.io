@@ -239,8 +239,8 @@
                             <i class="fas fa-user"></i>
                         </div>
                         <div class="info-content">
-                            <h3>姓名 / Name</h3>
-                            <p id="nameDisplay">张明</p>
+                            <h3>Name</h3>
+                            <p id="nameDisplay">Jiaqi Du</p>
                         </div>
                     </div>
                     
@@ -249,56 +249,17 @@
                             <i class="fas fa-envelope"></i>
                         </div>
                         <div class="info-content">
-                            <h3>邮箱 / Email</h3>
-                            <p><a href="mailto:zhangming@example.com" id="emailDisplay">zhangming@example.com</a></p>
+                            <h3> Email</h3>
+                            <p><a href="djq24@mails.tsinghua.edu.cn" id="emailDisplay">djq24@mails.tsinghua.edu.cn</a></p>
                         </div>
                     </div>
                 </div>
                 
                 <div class="footer">
-                    <p>最后更新: <span id="currentDate"></span> | 感谢访问!</p>
+                    <p>This page for </p>
                 </div>
             </div>
         </main>
     </div>
-
-    <script>
-        // 设置当前日期
-        const currentDate = new Date();
-        const options = { year: 'numeric', month: 'long', day: 'numeric' };
-        document.getElementById('currentDate').textContent = currentDate.toLocaleDateString('zh-CN', options);
-        
-        // 添加交互效果
-        const infoItems = document.querySelectorAll('.info-item');
-        infoItems.forEach(item => {
-            item.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateX(5px)';
-            });
-            
-            item.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateX(0)';
-            });
-        });
-        
-        // 点击邮箱时显示提示
-        const emailLink = document.getElementById('emailDisplay');
-        emailLink.addEventListener('click', function(e) {
-            e.preventDefault();
-            const email = this.textContent;
-            alert(`正在打开邮件客户端，准备发送邮件至: ${email}`);
-            // 在实际使用中，这里会直接打开邮件客户端
-            // window.location.href = `mailto:${email}`;
-        });
-        
-        // 姓名点击效果
-        const nameDisplay = document.getElementById('nameDisplay');
-        nameDisplay.addEventListener('click', function() {
-            const name = this.textContent;
-            const newName = prompt('请输入您的姓名:', name);
-            if (newName && newName.trim() !== '') {
-                this.textContent = newName;
-            }
-        });
-    </script>
 </body>
 </html>
